@@ -1,4 +1,4 @@
-# FirstLab-Shapes
+# BlueJ-DreamHouseDrawing
 
 This is the first BlueJ lab. 
 
