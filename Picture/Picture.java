@@ -12,9 +12,15 @@
  */
 public class Picture
 {
+    private Square grass;
+    private Square sky;
     private Square wall;
     private Square window;
+    private Square door;
+    
     private Triangle roof;
+    private Triangle walkway;
+    
     private Circle sun;
 
     /**
@@ -30,21 +36,53 @@ public class Picture
      */
     public void draw()
     {
+        grass = new Square();
+        grass.moveHorizontal(-60);
+        grass.moveVertical(110);
+        grass.changeSize(300);
+        grass.changeColor("green");
+        grass.makeVisible();
+        
+        sky = new Square();
+        sky.moveHorizontal(-60);
+        sky.moveVertical(-190);
+        sky.changeSize(300);
+        sky.changeColor("blue");
+        sky.makeVisible();
+        
+        walkway = new Triangle();
+        walkway.moveHorizontal(100);
+        walkway.moveVertical(140);
+        walkway.changeSize(200, 80);
+        walkway.changeColor("yellow");
+        walkway.makeVisible();
+        
         wall = new Square();
-        wall.moveVertical(80);
+        wall.moveHorizontal(40);
+        wall.moveVertical(60);
         wall.changeSize(100);
+        wall.changeColor("black");
         wall.makeVisible();
-
+        
+        door = new Square();
+        door.moveHorizontal(75);
+        door.moveVertical(130);
+        door.changeSize(30);
+        door.changeColor("red");
+        door.makeVisible();
+        
         window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(20);
+        window.changeSize(20);
+        window.changeColor("blue");
+        window.moveHorizontal(50);
         window.moveVertical(100);
         window.makeVisible();
 
         roof = new Triangle();
-        roof.changeSize(50, 140);
-        roof.moveHorizontal(60);
-        roof.moveVertical(70);
+        roof.changeSize(50, 120);
+        roof.changeColor("red");
+        roof.moveHorizontal(100);
+        roof.moveVertical(50);
         roof.makeVisible();
 
         sun = new Circle();
